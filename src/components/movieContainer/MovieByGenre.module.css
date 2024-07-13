@@ -1,0 +1,53 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns grid */
+  grid-gap: 20px; /* space between items */
+  padding: 20px;
+}
+
+.movieItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+  cursor: pointer; /* Indicates that the item is clickable */
+}
+
+.movieItem:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for 3D effect */
+}
+
+.movieImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover; /* Cover the entire area of the div */
+  border-radius: 8px; /* Rounded corners for better look */
+}
+
+.movieTitle {
+  margin-top: 10px;
+  text-align: center;
+  color: #121111; /* Better visibility */
+}
+
+/* Optional: Hover effect to show more info */
+.movieItem:hover .movieDetails {
+  opacity: 1;
+  visibility: visible;
+}
+
+.movieDetails {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}

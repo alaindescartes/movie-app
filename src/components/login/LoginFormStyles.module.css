@@ -1,0 +1,94 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(5, 16, 63, 0.7);
+}
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-10px, -10px);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  75% {
+    transform: translate(10px, 10px);
+  }
+}
+
+h1 {
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+.container h1 {
+  color: white;
+  font-weight: bold;
+  color: rgba(248, 232, 3, 0.824);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.loginForm {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  width: 100%;
+  background-color: rgb(0, 0, 139);
+  color: white;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: rgb(0, 86, 179);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(218, 11, 11, 0.639);
+}
+.forgotPassword {
+  color: #e1e5e9;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgotPassword:hover {
+  font-weight: 900;
+  text-decoration: underline;
+}

@@ -1,0 +1,50 @@
+.container .upcoming {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Adjusting to four columns for the grid */
+  grid-gap: 20px; /* Space between grid items */
+  padding: 20px; /* Padding around the entire grid */
+  margin: 0 auto; /* Center the grid horizontally */
+  /* overflow: hidden; */
+}
+
+.upcoming h1 {
+  grid-column: 1 / -1; /* Span the header across all columns */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upcoming span {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* Background color for visibility */
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.upcoming span:first-of-type {
+  left: 10px; /* Position the left arrow */
+}
+
+.upcoming span:last-of-type {
+  right: 10px; /* Position the right arrow */
+}
+
+.movieContainer {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Ensures a 4x4 grid within the container */
+  gap: 20px;
+}

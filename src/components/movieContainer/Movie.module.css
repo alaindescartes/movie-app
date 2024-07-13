@@ -1,0 +1,43 @@
+.movieCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 600px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.movieCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.movieImage {
+  width: 100%;
+  height: 70%; /* Allocate 60% of the card's height to the image */
+  object-fit: contain;
+  zoom: 7;
+}
+
+.movieInfo {
+  padding: 10px;
+  text-align: center;
+  height: 40%; /* Allocate the remaining 40% of the card's height to the movie info */
+  font-weight: 900;
+}
+
+.movieTitle {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.movieGenre,
+.movieRating {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}

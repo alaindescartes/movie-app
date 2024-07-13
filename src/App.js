@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import HomePage, {
+  loader as homePageLoader,
+} from "./components/homePage/HomePage";
+import LoginForm from "./components/login/LoginForm";
+import SignUp from "./components/login/SignUp";
+import MovieByGenre, {
+  fetchMoviesByGenre,
+} from "./components/movieContainer/MovieByGenre";
+import RootWrapper from "./components/routerWrappers/RootWrapper";
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootWrapper />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+        loader: homePageLoader,
+      },
+      {
+        path: "genres/:genreId",
+        element: <MovieByGenre />,
+        loader: async ({ params }) => {
+          return fetchMoviesByGenre(params.genreId);
+        },
+      },
+      {
+        path: "login",
+        children: [
+          {
+            index: true,
+            element: <LoginForm />,
+          },
+          {
+            path: "forgot-password",
+            element: <p>hey there from password</p>,
+          },
+          {
+            path: "signUp",
+            element: <SignUp />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
