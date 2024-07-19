@@ -50,6 +50,7 @@ export const router = createBrowserRouter([
 ]);
 
 function App() {
+  //movie app router
   return <RouterProvider router={router} />;
 }
 
